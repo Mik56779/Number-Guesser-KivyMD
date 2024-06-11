@@ -1,0 +1,73 @@
+MDScreen:
+    md_bg_color: self.theme_cls.backgroundColor
+
+    MDCard:
+        size_hint: None, None
+        size: 400, 500
+        pos_hint: {"center_x": .5, 'center_y': .5}
+        elevation: 10
+        padding: 25
+        spacing: 25
+        orientation: 'vertical'
+
+        MDLabel:
+            id: guess
+            text: "Guess Game"
+            halign: "center"
+            theme_text_color: "Custom"
+            text_color: "white"
+            role: "large"
+            size_hint_y: None
+            padding: 50
+            height: self.texture_size[1]
+
+        MDTextField:
+            id: num_input
+            mode: "outlined"
+            size_hint_x: None
+            width: "240dp"
+            pos_hint: {'center_x': .5, 'center_y': .5}
+
+            MDTextFieldLeadingIcon:
+                icon: "magnify"
+
+            MDTextFieldHintText:
+                text: "Guess Number"
+
+            MDTextFieldHelperText:
+                text: "Guess Number From 1 - 10"
+                mode: "persistent"
+
+        MDButton:
+            style: "elevated"
+            pos_hint: {'center_x': .5, 'center_y': .5}
+            on_press: app.submit()
+
+            MDButtonIcon:
+                icon: "plus"
+
+            MDButtonText:
+                text: "Check Guess"
+
+        MDLabel:
+            id: no
+            text: "??"
+            halign: "center"
+            theme_text_color: "Custom"
+            text_color: "white"
+            role: "large"
+            size_hint_y: None
+            padding: 50
+            height: self.texture_size[1]
+
+        MDButton:
+            id: sub
+            style: "elevated"
+            pos_hint: {'center_x': .5, 'center_y': .5}
+            on_press: app.reset()
+
+            MDButtonIcon:
+                icon: "minus"
+
+            MDButtonText:
+                text: "Reset"
